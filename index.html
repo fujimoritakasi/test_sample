@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF表示サイト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF表示サイト</h1>
+            <p>以下のリンクをクリック・タップしてPDFファイルを開いてください</p>
+        </header>
+
+        <main>
+            <div class="pdf-links">
+                <!-- 実際のPDF URLに置き換えてください -->
+                <div class="pdf-item">
+                    <h3>サンプル文書1</h3>
+                    <p>技術仕様書のサンプルです</p>
+                    <a href="https://example.com/documents/sample1.pdf" target="_blank" class="pdf-link">
+                        📄 PDFを開く
+                    </a>
+                </div>
+
+                <div class="pdf-item">
+                    <h3>サンプル文書2</h3>
+                    <p>報告書のサンプルです</p>
+                    <a href="https://example.com/documents/sample2.pdf" target="_blank" class="pdf-link">
+                        📄 PDFを開く
+                    </a>
+                </div>
+
+                <div class="pdf-item">
+                    <h3>サンプル文書3</h3>
+                    <p>マニュアルのサンプルです</p>
+                    <a href="https://example.com/documents/sample3.pdf" target="_blank" class="pdf-link">
+                        📄 PDFを開く
+                    </a>
+                </div>
+            </div>
+
+            <!-- インラインでPDFを表示するオプション -->
+            <div class="inline-pdf">
+                <h2>インライン表示</h2>
+                <p>ブラウザ内でPDFを直接表示</p>
+                <!-- 実際のPDF URLに置き換えてください -->
+                <iframe src="https://example.com/documents/sample1.pdf" width="100%" height="600px" class="pdf-iframe">
+                    お使いのブラウザはPDFの表示をサポートしていません。
+                    <a href="https://example.com/documents/sample1.pdf">こちらからPDFをダウンロードしてください</a>
+                </iframe>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 PDF表示サイト</p>
+        </footer>
+    </div>
+
+    <script>
+        // PDFリンクがクリックされた時の処理
+        document.querySelectorAll('.pdf-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                console.log('PDFリンクがクリックされました:', this.href);
+            });
+        });
+
+        // モバイルデバイスでの最適化
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // モバイルデバイスの場合、iframeを非表示にする
+            const iframe = document.querySelector('.pdf-iframe');
+            if (iframe) {
+                iframe.style.display = 'none';
+                const message = document.createElement('p');
+                message.textContent = 'モバイルデバイスではリンクをタップしてPDFを開いてください。';
+                message.style.textAlign = 'center';
+                message.style.padding = '20px';
+                message.style.backgroundColor = '#f0f0f0';
+                iframe.parentNode.insertBefore(message, iframe);
+            }
+        }
+    </script>
+</body>
+</html>
