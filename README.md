@@ -1,7 +1,21 @@
 # PDF表示サイト
 
-HTMLでリンクをタップするとPDFファイルを開くサイトです。
+HTMLでリンクをタップすると   - リンクをクリック/タップしてPDFが開くことを確認
+   - モバイルでの表示確認
 
+## 📁 PDFファイルの配置
+
+### 🗂️ 配置が必要なファイル
+以下の名前でPDFファイルを `c:\OAU\test_sample\` フォルダに配置してください：
+
+1. `document.pdf` - 表示したいPDFドキュメント
+
+### ✏️ ファイル名変更手順
+1. `index.html` を開く
+2. PDFファイル名（document.pdf）を実際のファイル名に変更
+3. 説明文やタイトルも実際の内容に合わせて変更
+
+## ✨ 機能
 ## 📁 ファイル構成
 
 ```
@@ -19,14 +33,10 @@ test_sample/
 1. **サイトを開く**
    - `index.html` をWebブラウザで開いてください
 
-2. **PDFファイルのURL設定**
-   - HTMLファイル内のPDFリンクを実際のURLに変更してください
-   - 現在のサンプルURL: `https://example.com/documents/sample1.pdf`
-   - 以下の3つのURLを実際のPDFファイルのURLに置き換えてください：
-     - `https://example.com/documents/sample1.pdf`
-     - `https://example.com/documents/sample2.pdf` 
-     - `https://example.com/documents/sample3.pdf`
-   - または、HTMLファイル内のリンクを編集して、お好みのPDFファイルURLを指定してください
+2. **PDFファイルの準備**
+   - PDFファイルを以下の名前で配置してください：
+     - `document.pdf`
+   - または、HTMLファイル内のリンクを変更して、お好みのPDFファイル名を指定してください
 
 3. **サイトの動作確認**
    - リンクをクリック/タップしてPDFが開くことを確認
@@ -64,9 +74,9 @@ test_sample/
 
 ## 🔧 カスタマイズ
 
-### PDFファイルのURL変更
+### PDFファイルの変更
 1. `index.html` 内のPDFリンクを編集
-2. 実際のPDFファイルのURLに置き換え
+2. 新しいPDFファイルを追加
 3. 説明文やタイトルを変更
 
 ### スタイルの変更
