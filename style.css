@@ -96,6 +96,57 @@ header p {
     transform: scale(0.98);
 }
 
+.app-redirect {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.app-redirect h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.app-redirect p {
+    color: #7f8c8d;
+    margin-bottom: 16px;
+}
+
+.app-link-button {
+    border: none;
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #27ae60, #1e8449);
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.app-link-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #229954, #196f3d);
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(39, 174, 96, 0.3);
+}
+
+.app-link-button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.app-link-button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.app-link-status {
+    min-height: 1.6em;
+}
+
 /* Inline PDF section */
 .inline-pdf {
     background: white;
@@ -154,6 +205,10 @@ footer {
     .inline-pdf {
         padding: 20px;
     }
+
+    .app-redirect {
+        padding: 20px;
+    }
     
     .pdf-iframe {
         height: 400px;
@@ -172,6 +227,11 @@ footer {
     .pdf-link {
         padding: 10px 15px;
         font-size: 0.9rem;
+    }
+
+    .app-link-button {
+        width: 100%;
+        max-width: 280px;
     }
     
     .pdf-iframe {

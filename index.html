@@ -24,6 +24,15 @@
                 </div>
             </div>
 
+            <div class="app-redirect">
+                <h2>アプリを開く</h2>
+                <p>URLパラメータの <code>redirectUrl</code> に指定されたアプリへ遷移します。</p>
+                <button type="button" class="app-link-button" id="appLinkButton" disabled>
+                    アプリを開く
+                </button>
+                <p class="app-link-status" id="appLinkStatus">redirectUrl パラメータを確認しています。</p>
+            </div>
+
             <!-- インラインでPDFを表示するオプション -->
             <div class="inline-pdf">
                 <h2>インライン表示</h2>
@@ -41,6 +50,22 @@
     </div>
 
     <script>
+        const appLinkButton = document.getElementById('appLinkButton');
+        const appLinkStatus = document.getElementById('appLinkStatus');
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = urlParams.get('redirectUrl');
+
+        if (redirectUrl) {
+            appLinkButton.disabled = false;
+            appLinkStatus.textContent = 'ボタンをタップすると指定アプリへ遷移します。';
+
+            appLinkButton.addEventListener('click', () => {
+                window.location.href = redirectUrl;
+            });
+        } else {
+            appLinkStatus.textContent = 'redirectUrl パラメータがないため、ボタンは無効です。';
+        }
+
         // PDFリンクがクリックされた時の処理
         document.querySelectorAll('.pdf-link').forEach(link => {
             link.addEventListener('click', function(e) {
